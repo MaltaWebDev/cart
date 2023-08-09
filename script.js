@@ -8,18 +8,11 @@ itemsContainer.addEventListener("click", (e) => {
   if (e.target.classList.contains("btn")) {
     console.log("clicked");
     let div = document.createElement("div");
-    div.classList.add("cartItem");
+    div.classList.add("cart-item");
     div.innerText = "item added";
     cartContainer.appendChild(div);
   }
 });
-
-// btn.forEach((button) => {
-//   button.addEventListener("click", () => {
-//     console.log("clicked");
-//     // let cartItem = document.createElement("div");
-//   });
-// });
 
 // function Item(imageSrc, altText, itemNumber, price) {
 //   this.imageSrc = imageSrc;

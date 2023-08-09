@@ -61,6 +61,7 @@
 }
 
 .cart-item {
-  width: 100%;
+  max-width: 100%;
   background-color: aqua;
+  padding: 1rem 5rem;
 }
