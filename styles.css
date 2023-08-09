@@ -9,11 +9,21 @@
 }
 
 .items {
-  max-width: 800px;
-  margin: auto;
   display: flex;
   justify-content: space-between;
-  padding-top: 5rem;
+  margin: auto;
+  margin-top: 5rem;
+}
+
+.items,
+.cart {
+  padding: 2rem;
+  max-width: 800px;
+  background-color: antiquewhite;
+}
+
+.cart {
+  margin: auto;
 }
 
 .item {
@@ -39,4 +49,18 @@
 .btn {
   margin: auto;
   padding: 0.25rem 1.5rem;
+}
+
+.cart-heading {
+  margin: auto;
+  text-align: center;
+}
+
+.cart {
+  min-height: 300px;
+}
+
+.cart-item {
+  width: 100%;
+  background-color: aqua;
 }
