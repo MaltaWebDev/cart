@@ -4,45 +4,44 @@ const itemsContainer = document.querySelector(".items");
 const cartContainer = document.querySelector(".cart");
 const btn = document.querySelectorAll(".btn");
 
-itemsContainer.addEventListener("click", (e) => {
-  if (e.target.classList.contains("btn")) {
-    console.log("clicked");
-    let div = document.createElement("div");
-    div.classList.add("cart-item");
-    div.innerText = "item added";
-    cartContainer.appendChild(div);
+const products = [
+  { id: 1, itemNumber: "Item 1", Price: "Price 60", url: "./img/bcaa.jpg" },
+  { id: 2, itemNumber: "Item 2", Price: "Price 80", url: "./img/creatine.jpg" },
+  {
+    id: 3,
+    itemNumber: "Item 3",
+    Price: "Price 10",
+    url: "./img/protein_powder.jpg",
+  },
+  {
+    id: 3,
+    itemNumber: "Item 4",
+    Price: "Price 45",
+    url: "./img/fat_burners.jpg",
+  },
+];
+
+products.forEach((product) => {
+  element.insertAdjacentHTML(
+    "beforeend",
+    `<button id="product-${product.id}">Add</button>`
+  );
+});
+
+itemsContainer.click((e) => {
+  if (e.id.startsWith("product")) {
+    const id = e.id.split("-")[1];
+    const product = products.find((product) => product.id === id);
   }
 });
 
-// function Item(imageSrc, altText, itemNumber, price) {
-//   this.imageSrc = imageSrc;
-//   this.altText = altText;
-//   this.itemNumber = itemNumber;
-//   this.price = price;
-// }
+// itemsContainer.addEventListener("click", (e) => {
+//   if (e.target.classList.contains("btn")) {
+//     console.log("clicked");
 
-// Item.prototype.generateHTML = function () {
-//   let div = document.createElement("div");
-//   div.classList.add("item");
-
-//   let img = document.createElement("img");
-//   img.src = this.imageSrc;
-//   img.alt = this.altText;
-//   div.appendChild(img);
-
-//   let itemNumberText = document.createElement("p");
-//   itemNumberText.classList.add("item-number");
-//   itemNumberText.textContent = this.itemNumber;
-//   div.appendChild(itemNumberText);
-
-//   let itemPrice = document.createElement("p");
-//   itemPrice.classList.add("item-price");
-//   itemPrice.textContent = this.price;
-//   div.appendChild(itemPrice);
-
-//   let button = document.createElement("button");
-//   button.textContent = "Add";
-//   div.appendChild(button);
-
-//   return div;
-// };
+//     let div = document.createElement("div");
+//     div.classList.add("cart-item");
+//     div.innerText = "item added";
+//     cartContainer.appendChild(div);
+//   }
+// });
