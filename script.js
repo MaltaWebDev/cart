@@ -74,11 +74,33 @@ cartContainer.addEventListener("click", (e) => {
     const cartItem = e.target.closest(".cart-item");
     const quantityElement = cartItem.querySelector(".quantity span");
     let currentQuantity = parseInt(quantityElement.textContent);
-    if (e.target.classList.contains("minus-btn") && currentQuantity > 1) {
-      currentQuantity--;
+
+    if (e.target.classList.contains("minus-btn")) {
+      if (currentQuantity === 1) {
+        cartItem.remove();
+      } else {
+        currentQuantity--;
+      }
     } else if (e.target.classList.contains("plus-btn")) {
       currentQuantity++;
     }
+
     quantityElement.textContent = currentQuantity;
+    updateTotalPrice();
   }
 });
+
+// update price when items are added
+function updateTotalPrice() {
+  const cartItems = document.querySelectorAll(".cart-item");
+  let totalPrice = 0;
+  cartItems.forEach((item) => {
+    const price = parseFloat(
+      item.querySelector(".cart-price").textContent.replace("Price $", "")
+    );
+    const quantity = parseInt(item.querySelector(".quantity span").textContent);
+    totalPrice += price * quantity;
+  });
+  document.querySelector(".total-price span").textContent =
+    totalPrice.toFixed(2);
+}
