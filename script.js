@@ -34,8 +34,7 @@ products.forEach((product) => {
         <p class="item-number">${product.itemNumber}</p>
         <p class="price">${product.price}</p>
         <button id="product-${product.id}" class="btn">Add</button>
-      </div>
-    <button id="product-${product.id}">Add</button>`
+      </div>`
   );
 });
 
@@ -45,14 +44,3 @@ itemsContainer.addEventListener("click", (e) => {
     const product = products.find((product) => product.id === id);
   }
 });
-
-// itemsContainer.addEventListener("click", (e) => {
-//   if (e.target.classList.contains("btn")) {
-//     console.log("clicked");
-
-//     let div = document.createElement("div");
-//     div.classList.add("cart-item");
-//     div.innerText = "item added";
-//     cartContainer.appendChild(div);
-//   }
-// });

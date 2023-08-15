@@ -8,14 +8,14 @@
   font-family: "Roboto", sans-serif;
 }
 
-.items {
+#items-container {
   display: flex;
   justify-content: space-between;
   margin: auto;
   margin-top: 5rem;
 }
 
-.items,
+#items-container,
 .cart {
   padding: 2rem;
   max-width: 800px;
