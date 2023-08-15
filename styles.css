@@ -62,6 +62,13 @@
 
 .cart-item {
   max-width: 100%;
-  background-color: aqua;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding: 1rem 5rem;
+}
+
+.minus-btn,
+.plus-btn {
+  padding: 0.25rem 0.5rem;
 }
