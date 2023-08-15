@@ -22,24 +22,30 @@
   padding-top: 5rem;
 }
 
+.cart-wrapper {
+  max-width: 800px;
+  margin: auto;
+  background-color: rgba(245, 245, 245, 0.9);
+  border-radius: 1rem;
+  padding-bottom: 1px;
+}
+
 #items-container {
   display: flex;
   justify-content: space-between;
   margin: auto;
   padding-top: 5rem;
-  background-color: rgba(245, 245, 245, 0.9);
 }
 
 #items-container,
 .cart {
   padding: 2rem;
-  max-width: 800px;
-  /* background-color: antiquewhite; */
 }
 
 .cart {
-  margin: auto;
-  background-color: rgba(220, 220, 220, 0.9);
+  margin: 0 5rem 2rem 5rem;
+  background-color: rgba(230, 230, 230, 0.9);
+  border-radius: 1rem;
 }
 
 .item {
@@ -87,4 +93,10 @@
 .minus-btn,
 .plus-btn {
   padding: 0.25rem 0.5rem;
+}
+
+.minus-btn,
+.plus-btn,
+.btn {
+  border-radius: 10px;
 }
