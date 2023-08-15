@@ -45,7 +45,7 @@ products.forEach((product) => {
   );
 });
 
-// add event listener to add items to cart
+// add items to cart when 'Add' button is clicked
 itemsContainer.addEventListener("click", (e) => {
   if (e.target.id.startsWith("product")) {
     const id = parseInt(e.target.id.split("-")[1]);
@@ -55,8 +55,8 @@ itemsContainer.addEventListener("click", (e) => {
       "beforeend",
       `
       <div class="cart-item">
-        <p class="item-number">${product.itemNumber}</p>
-        <p class="price">${product.price}</p>
+        <p class="cart-item-number">${product.itemNumber}</p>
+        <p class="cart-price">${product.price}</p>
         <p class="quantity">Quantity: <span>1</span></p>
         <button class="minus-btn" data-product-id="${product.id}">-</button>
         <button class="plus-btn" data-product-id="${product.id}">+</button>
