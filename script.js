@@ -32,7 +32,7 @@ products.forEach((product) => {
   itemsContainer.insertAdjacentHTML(
     "beforeend",
     `
-    <div class="item">
+    <div class="item flex-col">
         <img
           class="img"
           src="${product.url}"
