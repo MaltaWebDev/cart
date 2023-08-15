@@ -14,7 +14,7 @@ const products = [
     url: "./img/protein_powder.jpg",
   },
   {
-    id: 3,
+    id: 4,
     itemNumber: "Item 4",
     Price: "Price 45",
     url: "./img/fat_burners.jpg",
@@ -22,15 +22,26 @@ const products = [
 ];
 
 products.forEach((product) => {
-  element.insertAdjacentHTML(
+  itemsContainer.insertAdjacentHTML(
     "beforeend",
-    `<button id="product-${product.id}">Add</button>`
+    `
+    div class="item">
+        <img
+          class="img"
+          src="${product.url}"
+          alt="${product.itemNumber}"
+        />
+        <p class="item-number">${product.itemNumber}</p>
+        <p class="price">${product.price}</p>
+        <button id="product-${product.id}" class="btn">Add</button>
+      </div>
+    <button id="product-${product.id}">Add</button>`
   );
 });
 
 itemsContainer.click((e) => {
-  if (e.id.startsWith("product")) {
-    const id = e.id.split("-")[1];
+  if (e.target.id.startsWith("product")) {
+    const id = parseInt(e.target.id.split("-")[1]);
     const product = products.find((product) => product.id === id);
   }
 });
