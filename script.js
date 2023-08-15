@@ -1,22 +1,22 @@
 "use strict";
 
-const itemsContainer = document.querySelector(".items");
+const itemsContainer = document.querySelector("#items-container");
 const cartContainer = document.querySelector(".cart");
 const btn = document.querySelectorAll(".btn");
 
 const products = [
-  { id: 1, itemNumber: "Item 1", Price: "Price 60", url: "./img/bcaa.jpg" },
-  { id: 2, itemNumber: "Item 2", Price: "Price 80", url: "./img/creatine.jpg" },
+  { id: 1, itemNumber: "Item 1", price: "Price 60", url: "./img/bcaa.jpg" },
+  { id: 2, itemNumber: "Item 2", price: "Price 80", url: "./img/creatine.jpg" },
   {
     id: 3,
     itemNumber: "Item 3",
-    Price: "Price 10",
+    price: "Price 10",
     url: "./img/protein_powder.jpg",
   },
   {
     id: 4,
     itemNumber: "Item 4",
-    Price: "Price 45",
+    price: "Price 45",
     url: "./img/fat_burners.jpg",
   },
 ];
@@ -25,7 +25,7 @@ products.forEach((product) => {
   itemsContainer.insertAdjacentHTML(
     "beforeend",
     `
-    div class="item">
+    <div class="item">
         <img
           class="img"
           src="${product.url}"
@@ -39,7 +39,7 @@ products.forEach((product) => {
   );
 });
 
-itemsContainer.click((e) => {
+itemsContainer.addEventListener("click", (e) => {
   if (e.target.id.startsWith("product")) {
     const id = parseInt(e.target.id.split("-")[1]);
     const product = products.find((product) => product.id === id);
